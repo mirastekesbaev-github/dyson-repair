@@ -59,6 +59,27 @@ section {
     order: 5px solid white;
 }
 
+.js-badger-accordion {
+  .js-badger-accordion-header {
+    .badger-accordion-toggle {
+      display: block;
+    }
+  }
+
+  .js-badger-accordion-panel {
+    margin: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
+
+    &:last-child {
+      border-bottom: none;
+    }
+    
+    .js-badger-accordion-panel-inner {
+      padding: 0 8px;
+    }
+  }
+}
+
 @media screen and (max-width: 768px) {
   .section__title {
     font-size: 32px;

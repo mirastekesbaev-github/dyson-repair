@@ -1,32 +1,40 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
+    <Header />
+    <main class="main">
+      <Greet />
+      <Product />
+      <Order />
+      <Facility />
+      <Query />
+    </main>
+    <OrderModal />
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import Header from '@/components/header/Header.vue'
+import Greet from '@/components/sections/Greet.vue'
+import Product from '@/components/sections/product/Product.vue'
+import Order from '@/components/sections/Order.vue'
+import Facility from '@/components/sections/facility/Facility.vue'
+import Query from '@/components/sections/query/Query.vue'
+import OrderModal from '@/components/modal/OrderModal.vue'
 
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+export default {
+  name: 'App',
+  components: {
+    Header,
+    Greet,
+    Product,
+    Order,
+    Facility,
+    Query,
+    OrderModal
   }
 }
+</script>
+
+<style lang="scss" scoped>
+
 </style>

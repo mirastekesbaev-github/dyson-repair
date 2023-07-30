@@ -1,0 +1,70 @@
+@import './reset.scss';
+@import './colors.scss';
+@import './fonts.scss';
+@import './flex-grid.scss';
+@import './spaces.scss';
+
+body {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    color: $gray900;
+}
+
+section {
+    padding: 70px 0 70px 0;
+}
+
+.section__title {
+    margin-bottom: 24px;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 100%;
+
+    span {
+        color: $error600;
+    }
+}
+
+.section__subtitle {
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 132%;
+    letter-spacing: 1.4px;
+}
+
+.carousel {
+    padding: 0;
+}
+.carousel__item {
+    min-height: 200px;
+    width: 100%;
+    background-color: $primary400;
+    color: var(--vc-clr-white);
+    font-size: 20px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel__slide {
+    padding: 10px;
+}
+
+.carousel__prev,
+.carousel__next {
+    box-sizing: content-box;
+    order: 5px solid white;
+}
+
+@media screen and (max-width: 768px) {
+  .section__title {
+    font-size: 32px;
+  }
+
+  .section__subtitle {
+    font-size: 18px;
+  }
+}

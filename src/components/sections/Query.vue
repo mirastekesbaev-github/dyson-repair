@@ -8,8 +8,8 @@
           </h2>
         </div>
         <div class="content__body">
-          <badger-accordion :options="options">
-            <badger-accordion-item>
+          <BadgerAccordion :options="options">
+            <BadgerAccordionItem>
               <template slot="header">
                 <div class="header__inner flex aic jcsb" @click="collapseValues.first = !collapseValues.first">
                   <p>Сколько длится ремонт?</p>
@@ -21,22 +21,18 @@
               </template>    
               <template slot="content">
                 <div class="content__inner">
-                  <p>First Accordion Content</p>
-                  <p>First Accordion Content</p>
-                  <p>First Accordion Content</p>
-                  <p>First Accordion Content</p>
-                  <p>First Accordion Content</p>
-                  <p>First Accordion Content</p>
-                  <p>First Accordion Content</p>
-                  <p>First Accordion Content</p>
-                  <p>First Accordion Content</p>
+                  <p class="mb10">1-3 дня.</p>
+                  <p>
+                    Точные сроки ремонта станут известны только во время самого ремонта. 
+                    Чем серьезнее поломка, тем дольше будет ремонт.
+                  </p>
                 </div>
               </template>  
-            </badger-accordion-item>
-            <badger-accordion-item>
+            </BadgerAccordionItem>
+            <BadgerAccordionItem>
               <template slot="header">
                 <div class="header__inner flex aic jcsb" @click="collapseValues.second = !collapseValues.second">
-                  <p>Сколько длится ремонт?</p>
+                  <p>Как проходит ремонт?</p>
                   <div class="icon">
                     <img v-if="!collapseValues.second" src="@/assets/icons/add-line.svg" alt="plus">
                     <img v-if="collapseValues.second" src="@/assets/icons/subtract-line.svg" alt="minus">
@@ -45,22 +41,21 @@
               </template>    
               <template slot="content">
                 <div class="content__inner">
-                  <p>First Accordion Content</p>
-                  <p>First Accordion Content</p>
-                  <p>First Accordion Content</p>
-                  <p>First Accordion Content</p>
-                  <p>First Accordion Content</p>
-                  <p>First Accordion Content</p>
-                  <p>First Accordion Content</p>
-                  <p>First Accordion Content</p>
-                  <p>First Accordion Content</p>
+                  <ul>
+                    <li>Доставляем технику в сервисный центр: доставка приедет к вам в течение часа</li>
+                    <li>Определяем проблему</li>
+                    <li>Согласовываем цену с вами: называем цену за ремонт + стоимость запчасти</li>
+                    <li>Заказываем запчасти с нашего склада</li>
+                    <li>Чиним</li>
+                    <li>Проверяем качество</li>
+                  </ul>
                 </div>
               </template>  
-            </badger-accordion-item>
-            <badger-accordion-item>
+            </BadgerAccordionItem>
+            <BadgerAccordionItem>
               <template slot="header">
                 <div class="header__inner flex aic jcsb" @click="collapseValues.third = !collapseValues.third">
-                  <p>Сколько длится ремонт?</p>
+                  <p>Как проходит контроль качества?</p>
                   <div class="icon">
                     <img v-if="!collapseValues.third" src="@/assets/icons/add-line.svg" alt="plus">
                     <img v-if="collapseValues.third" src="@/assets/icons/subtract-line.svg" alt="minus">
@@ -69,22 +64,17 @@
               </template>    
               <template slot="content">
                 <div class="content__inner">
-                  <p>First Accordion Content</p>
-                  <p>First Accordion Content</p>
-                  <p>First Accordion Content</p>
-                  <p>First Accordion Content</p>
-                  <p>First Accordion Content</p>
-                  <p>First Accordion Content</p>
-                  <p>First Accordion Content</p>
-                  <p>First Accordion Content</p>
-                  <p>First Accordion Content</p>
+                  <p>
+                    После ремонта инженер наблюдает за включенным устройством. 
+                    Если дефект проявится опять, устройство будут ремонтировать еще раз.
+                  </p>
                 </div>
               </template>  
-            </badger-accordion-item>
-            <badger-accordion-item>
+            </BadgerAccordionItem>
+            <BadgerAccordionItem>
               <template slot="header">
                 <div class="header__inner flex aic jcsb" @click="collapseValues.fourth = !collapseValues.fourth">
-                  <p>Сколько длится ремонт?</p>
+                  <p>Когда нельзя починить?</p>
                   <div class="icon">
                     <img v-if="!collapseValues.fourth" src="@/assets/icons/add-line.svg" alt="plus">
                     <img v-if="collapseValues.fourth" src="@/assets/icons/subtract-line.svg" alt="minus">
@@ -93,22 +83,27 @@
               </template>    
               <template slot="content">
                 <div class="content__inner">
-                  <p>First Accordion Content</p>
-                  <p>First Accordion Content</p>
-                  <p>First Accordion Content</p>
-                  <p>First Accordion Content</p>
-                  <p>First Accordion Content</p>
-                  <p>First Accordion Content</p>
-                  <p>First Accordion Content</p>
-                  <p>First Accordion Content</p>
-                  <p>First Accordion Content</p>
+                  <p class="mb10">Мы не чиним</p>
+                  <ul>
+                    <li>Проекционные телевизоры</li>
+                    <li>Кинескопные телевизоры</li>
+                    <li>Матрицы, разбитые экраны, пульты и детали корпуса</li>
+                    <li>Не восстанавливаем залитую технику </li>
+                    <li>Полосы, пятна, рябь, разводы на экране</li>
+                    <li>Разбитые матрицы</li>
+                    <li>Разобранные мониторы</li>
+                    <li>Кинескопные мониторы</li>
+                    <li>Не меняем подставки и ножки</li>
+                    <li>Разобранные проекторы</li>
+                    <li>Не принимаем запчасти от клиента</li>
+                  </ul>
                 </div>
               </template>  
-            </badger-accordion-item>
-            <badger-accordion-item>
+            </BadgerAccordionItem>
+            <BadgerAccordionItem>
               <template slot="header">
                 <div class="header__inner flex aic jcsb" @click="collapseValues.fifth = !collapseValues.fifth">
-                  <p>Сколько длится ремонт?</p>
+                  <p>Какие марки вы ремонтируете?</p>
                   <div class="icon">
                     <img v-if="!collapseValues.fifth" src="@/assets/icons/add-line.svg" alt="plus">
                     <img v-if="collapseValues.fifth" src="@/assets/icons/subtract-line.svg" alt="minus">
@@ -117,19 +112,14 @@
               </template>    
               <template slot="content">
                 <div class="content__inner">
-                  <p>First Accordion Content</p>
-                  <p>First Accordion Content</p>
-                  <p>First Accordion Content</p>
-                  <p>First Accordion Content</p>
-                  <p>First Accordion Content</p>
-                  <p>First Accordion Content</p>
-                  <p>First Accordion Content</p>
-                  <p>First Accordion Content</p>
-                  <p>First Accordion Content</p>
+                  <p>
+                    Мы ремонтируем все известные марки: 
+                    Samsung, LG, Sony, Panasonic и многие другие.
+                </p>
                 </div>
               </template>  
-            </badger-accordion-item>
-          </badger-accordion>
+            </BadgerAccordionItem>
+          </BadgerAccordion>
         </div>
       </div>
     </div>
@@ -180,7 +170,7 @@ export default {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color:rgba(0, 0, 0, .7);
+    background-color:rgba(0, 0, 0, .8);
   }
   .content {
     z-index: 10;
@@ -197,7 +187,7 @@ export default {
           width: 100%;
           padding: 16px 0;
           color: $gray100;
-          font-size: 20px;
+          font-size: 22px;
 
           .icon {
             display: flex;
@@ -211,6 +201,31 @@ export default {
         .content__inner {
           padding-bottom: 32px;
           color: $gray100;
+
+          p {
+            line-height: 132%;
+          }
+
+          ul {
+            li {
+              position: relative;
+              margin-bottom: 8px;
+              padding-left: 32px;
+            
+              &::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 10px;
+                transform: translateY(-50%);
+                display: block;
+                height: 6px;
+                width: 6px;
+                background: #fff;
+                border-radius: 50%;
+              }
+            }
+          }
         }
       }
     }

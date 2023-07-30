@@ -7,7 +7,9 @@
       <Order />
       <Facility />
       <Query />
+      <Contact />
     </main>
+    <Footer />
     <OrderModal />
   </div>
 </template>
@@ -18,7 +20,9 @@ import Greet from '@/components/sections/Greet.vue'
 import Product from '@/components/sections/product/Product.vue'
 import Order from '@/components/sections/Order.vue'
 import Facility from '@/components/sections/facility/Facility.vue'
-import Query from '@/components/sections/query/Query.vue'
+import Query from '@/components/sections/Query.vue'
+import Contact from '@/components/sections/Contact.vue'
+import Footer from '@/components/footer/Footer.vue'
 import OrderModal from '@/components/modal/OrderModal.vue'
 
 export default {
@@ -30,6 +34,8 @@ export default {
     Order,
     Facility,
     Query,
+    Contact,
+    Footer,
     OrderModal
   }
 }
@@ -38,3 +44,4 @@ export default {
 <style lang="scss" scoped>
 
 </style>
+~

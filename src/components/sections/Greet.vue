@@ -4,7 +4,7 @@
       <div class="content h100 flex fdc jcc">
         <h2 class="title" data-aos="ds-fade-up">Ремонт всей техники Dyson с гарантией 3 года</h2>
         <ul class="list" data-aos="ds-fade-up">
-          <li class="item">
+          <li class="item" data-aos="ds-fade-up">
             <span class="icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <path

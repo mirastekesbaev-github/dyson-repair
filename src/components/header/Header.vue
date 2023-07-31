@@ -8,7 +8,7 @@
         <div class="header__burger" @click="toggleMenuVisible">
           <div class="navbar">
             <div class="nav-container">
-              <input class="checkbox" type="checkbox" />
+              <input class="checkbox" :class="{ 'checked': menuVisible }" type="checkbox" />
               <div class="hamburger-lines">
                 <span class="line line1"></span>
                 <span class="line line2"></span>
@@ -68,6 +68,7 @@ export default {
   },
   data() {
     return {
+      check: false,
       menu: [
       {
         href: '#',
@@ -183,19 +184,19 @@ export default {
       transition: transform 0.4s ease-in-out;
     }
 
-    .nav-container input[type="checkbox"]:checked ~ .menu-items {
+    .nav-container .checkbox.checked ~ .menu-items {
       transform: translateX(0);
     }
 
-    .nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
+    .nav-container .checkbox.checked ~ .hamburger-lines .line1 {
       transform: rotate(45deg);
     }
 
-    .nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
+    .nav-container .checkbox.checked ~ .hamburger-lines .line2 {
       transform: scaleY(0);
     }
 
-    .nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
+    .nav-container .checkbox.checked ~ .hamburger-lines .line3 {
       transform: rotate(-45deg);
     }
   }

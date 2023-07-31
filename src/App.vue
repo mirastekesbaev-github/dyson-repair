@@ -64,6 +64,7 @@ export default {
 @media screen and (max-width: 992px) {
   #app {
     position: relative;
+    padding-top: 86px;
 
     .overlay {
       position: absolute;
@@ -77,16 +78,6 @@ export default {
       background: rgba(0, 0, 0, 0.2);
     }
   }
-}
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity .4s;
-}
-
-.fade-enter,
-.fade-leave-to {
-  opacity: 0;
 }
 </style>
 ~

@@ -1,11 +1,13 @@
-<template> 
+<template>
   <div class="order">
-    <modal 
+    <modal
       name="order-modal"
       :width="400"
       height="auto"
       classes="modal"
+      overlay-transition="fade"
       @before-close="beforeClose"
+      :adaptive="true"
     >
       <button class="modal-button" @click="closeModal">
         <img src="@/assets/icons/close-line.svg">
@@ -17,9 +19,9 @@
         <form class="modal-form" @submit.prevent="submit">
           <div class="form-field" :class="{ 'error': $v.name.$error }">
             <label for="name">Ваше имя</label>
-            <input 
-              v-model.trim="$v.name.$model" 
-              id="name" 
+            <input
+              v-model.trim="$v.name.$model"
+              id="name"
               type="text"
             >
             <span v-if="!$v.name.required && $v.name.$dirty" class="error-text">
@@ -28,9 +30,9 @@
           </div>
           <div class="form-field" :class="{ 'error': $v.phone.$error }">
             <label for="phone">Ваш телефон</label>
-            <input 
-              v-model.trim="$v.phone.$model" 
-              id="phone" 
+            <input
+              v-model.trim="$v.phone.$model"
+              id="phone"
               type="text"
               v-mask="'+7 (###) ###-##-##'"
             >
@@ -92,7 +94,7 @@ export default {
 </script>
 
 <style lang="scss">
-.modal {  
+.modal {
   position: relative;
   background-color: #fff;
   width: 460px;
@@ -119,7 +121,7 @@ export default {
       height: 100%;
     }
   }
-    
+
   &-title {
     padding-top: 24px;
     padding-bottom: 18px;
@@ -187,6 +189,12 @@ export default {
         margin-bottom: 42px;
       }
     }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .modal {
+
   }
 }
 </style>

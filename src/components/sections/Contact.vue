@@ -9,7 +9,7 @@
                     Контакты
               </h2>
               <p class="section__subtitle subtitle">
-                    Сервисный центр работает с 9 утра до 8 вечера. Без выходных. 
+                    Сервисный центр работает с 9 утра до 8 вечера. Без выходных.
               </p>
               <div class="body-left__item">
                 <p>
@@ -47,12 +47,12 @@
               </div>
             </div>
             <div class="body-right col-xxl-6 col-xl-6 col-lg-6">
-              <iframe 
-                src="https://yandex.com/map-widget/v1/?um=constructor%3Ae2feed00af6c44b057f2549839226e528ed612e1b16f7b3970c07d8a40b57137&amp;source=constructor" 
-                width="100%" 
-                height="476" 
-                frameborder="0">
-              </iframe>
+              <iframe
+                src="https://yandex.ru/map-widget/v1/?um=constructor%3Affc7dc87fae4228efbcb4777cfe25d42a84c80602415c44deb1b4b7af7efe2c6&amp;source=constructor"
+                width="100%"
+                height="476"
+                frameborder="0"
+              />
             </div>
         </div>
         </div>
@@ -79,7 +79,7 @@ export default {
 
 <style lang="scss" scoped>
 #contact-section {
-  background: $gray200;
+  background: #f7f7f7;
   .content {
     &__body {
       .body-left {
@@ -90,7 +90,7 @@ export default {
         &__item {
           padding: 24px 0;
           border-top: 1px solid $gray300;
-        
+
           &:last-child {
             border-top: none;
           }

@@ -2,10 +2,10 @@
   <header class="header pt10 pb10">
     <div class="container">
       <div class="header__body flex aic jcsb pt10 pb10">
-        <div class="header__logo">
+        <div class="header__logo" data-aos="ds-fade-up">
           <img src="../../assets/img/dyson-logo.png" alt="dyson">
         </div>
-        <div class="header__burger" @click="toggleMenuVisible">
+        <div class="header__burger" data-aos="ds-fade-up" @click="toggleMenuVisible">
           <div class="navbar">
             <div class="nav-container">
               <input class="checkbox" :class="{ 'checked': menuVisible }" type="checkbox" />
@@ -30,14 +30,14 @@
             <UIButton btn-name="Перезвоните мне" font-size="14px" @click="showModal" />
           </div>
         </nav>
-        <nav class="header__menu">
+        <nav class="header__menu" data-aos="ds-fade-up">
           <ul class="list flex aic">
             <li v-for="(item, index) in menu" :key="index" class="item">
               <a :href="item.href" class="item-link">{{ item.name }}</a>
             </li>
           </ul>
         </nav>
-        <div class="header__right flex aic jcsb">
+        <div class="header__right flex aic jcsb" data-aos="ds-fade-up">
           <div class="mr10 pr10">
             <HeaderContact />
           </div>
@@ -107,6 +107,23 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+[data-aos="ds-fade-up"] {
+  opacity: 0;
+  transition-property: transform, opacity;
+
+  &.aos-animate {
+    opacity: 1;
+  }
+
+  @media screen and (min-width: 768px) {
+    transform: translateY(10px);
+
+    &.aos-animate {
+      transform: translateY(0);
+    }
+  }
+}
+
 .header {
   height: 86px;
   background: #fff;

@@ -5,7 +5,7 @@
         <div class="header__logo">
           <img src="../../assets/img/dyson-logo.png" alt="dyson">
         </div>
-        <div class="header__burger" @click="show = !show">
+        <div class="header__burger" @click="toggleMenuVisible">
           <div class="navbar">
             <div class="nav-container">
               <input class="checkbox" type="checkbox" />
@@ -17,7 +17,7 @@
             </div>
           </div>
         </div>
-        <nav class="header__burger-menu flex fdc jcsb" :class="{ 'active': show }">
+        <nav class="header__burger-menu flex fdc jcsb" :class="{ 'active': menuVisible }">
           <ul class="list">
             <li v-for="(item, index) in menu" :key="index" class="item">
               <a :href="item.href" class="item-link">{{ item.name }}</a>
@@ -27,7 +27,7 @@
           <div class="db pl8 pr8">
             <HeaderContact text-align="tal"/>
             <span class="db mt10 pt6"></span>
-            <UIButton btn-name="Перезвоните мне" font-size="14px" />
+            <UIButton btn-name="Перезвоните мне" font-size="14px" @click="showModal" />
           </div>
         </nav>
         <nav class="header__menu">
@@ -54,6 +54,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import HeaderContact from '@/components/header/components/HeaderContact.vue'
 import HeaderPhone from '@/components/header/components/HeaderPhone.vue'
 import UIButton from '@/components/ui/Button.vue'
@@ -67,7 +68,6 @@ export default {
   },
   data() {
     return {
-      show: false,
       menu: [
       {
         href: '#',
@@ -88,9 +88,18 @@ export default {
       ]
     }
   },
+  computed: {
+    ...mapGetters({
+      menuVisible: 'menuVisible'
+    })
+  },
   methods: {
     showModal () {
       this.$modal.show('order-modal')
+    },
+    toggleMenuVisible () {
+      this.$store.commit('setMenuVisible', !this.menuVisible)
+      this.$store.commit('setOverlayVisible', this.menuVisible)
     }
   }
 }
@@ -99,6 +108,7 @@ export default {
 <style lang="scss" scoped>
 .header {
   height: 86px;
+  background: #fff;
 
   &__logo {
     width: 100px;
@@ -109,7 +119,7 @@ export default {
       height: auto;
     }
   }
-  
+
   &__burger {
     position: relative;
 
@@ -208,7 +218,7 @@ export default {
 
     .list {
       .item {
-        font-size: 16px;
+        font-size: 18px;
         padding: 8px;
 
         .item-link {
@@ -272,6 +282,15 @@ export default {
 
 @media screen and (max-width: 992px) {
   .header {
+    position: fixed;
+    z-index: 100;
+    height: 86px;
+    display: flex;
+    align-items: center;
+    top: 0;
+    left: 0;
+    right: 0;
+
     &__menu {
       display: none;
     }
@@ -295,6 +314,14 @@ export default {
   .header {
     &__burger {
       display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .header {
+    &__burger-menu {
+      width: 100%;
     }
   }
 }

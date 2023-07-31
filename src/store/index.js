@@ -5,13 +5,19 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    menuVisible: false,
+    overlayVisible: false
   },
   getters: {
+    menuVisible: s => s.menuVisible,
+    overlayVisible: s => s.overlayVisible
   },
   mutations: {
-  },
-  actions: {
-  },
-  modules: {
+    setMenuVisible (state, payload) {
+      state.menuVisible = payload
+    },
+    setOverlayVisible (state, payload) {
+      state.overlayVisible = payload
+    }
   }
 })

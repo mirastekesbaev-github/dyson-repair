@@ -18,16 +18,16 @@
                     <img v-if="collapseValues.first" src="@/assets/icons/subtract-line.svg" alt="minus">
                   </div>
                 </div>
-              </template>    
+              </template>
               <template slot="content">
                 <div class="content__inner">
                   <p class="mb10">1-3 дня.</p>
                   <p>
-                    Точные сроки ремонта станут известны только во время самого ремонта. 
+                    Точные сроки ремонта станут известны только во время самого ремонта.
                     Чем серьезнее поломка, тем дольше будет ремонт.
                   </p>
                 </div>
-              </template>  
+              </template>
             </BadgerAccordionItem>
             <BadgerAccordionItem>
               <template slot="header">
@@ -38,7 +38,7 @@
                     <img v-if="collapseValues.second" src="@/assets/icons/subtract-line.svg" alt="minus">
                   </div>
                 </div>
-              </template>    
+              </template>
               <template slot="content">
                 <div class="content__inner">
                   <ul>
@@ -50,7 +50,7 @@
                     <li>Проверяем качество</li>
                   </ul>
                 </div>
-              </template>  
+              </template>
             </BadgerAccordionItem>
             <BadgerAccordionItem>
               <template slot="header">
@@ -61,63 +61,38 @@
                     <img v-if="collapseValues.third" src="@/assets/icons/subtract-line.svg" alt="minus">
                   </div>
                 </div>
-              </template>    
+              </template>
               <template slot="content">
                 <div class="content__inner">
                   <p>
-                    После ремонта инженер наблюдает за включенным устройством. 
+                    После ремонта инженер наблюдает за включенным устройством.
                     Если дефект проявится опять, устройство будут ремонтировать еще раз.
                   </p>
                 </div>
-              </template>  
-            </BadgerAccordionItem>
-            <BadgerAccordionItem>
-              <template slot="header">
-                <div class="header__inner flex aic jcsb" @click="collapseValues.fourth = !collapseValues.fourth">
-                  <p>Когда нельзя починить?</p>
-                  <div class="icon">
-                    <img v-if="!collapseValues.fourth" src="@/assets/icons/add-line.svg" alt="plus">
-                    <img v-if="collapseValues.fourth" src="@/assets/icons/subtract-line.svg" alt="minus">
-                  </div>
-                </div>
-              </template>    
-              <template slot="content">
-                <div class="content__inner">
-                  <p class="mb10">Мы не чиним</p>
-                  <ul>
-                    <li>Проекционные телевизоры</li>
-                    <li>Кинескопные телевизоры</li>
-                    <li>Матрицы, разбитые экраны, пульты и детали корпуса</li>
-                    <li>Не восстанавливаем залитую технику </li>
-                    <li>Полосы, пятна, рябь, разводы на экране</li>
-                    <li>Разбитые матрицы</li>
-                    <li>Разобранные мониторы</li>
-                    <li>Кинескопные мониторы</li>
-                    <li>Не меняем подставки и ножки</li>
-                    <li>Разобранные проекторы</li>
-                    <li>Не принимаем запчасти от клиента</li>
-                  </ul>
-                </div>
-              </template>  
+              </template>
             </BadgerAccordionItem>
             <BadgerAccordionItem>
               <template slot="header">
                 <div class="header__inner flex aic jcsb" @click="collapseValues.fifth = !collapseValues.fifth">
-                  <p>Какие марки вы ремонтируете?</p>
+                  <p>Какую технику вы ремонтируете?</p>
                   <div class="icon">
                     <img v-if="!collapseValues.fifth" src="@/assets/icons/add-line.svg" alt="plus">
                     <img v-if="collapseValues.fifth" src="@/assets/icons/subtract-line.svg" alt="minus">
                   </div>
                 </div>
-              </template>    
+              </template>
               <template slot="content">
                 <div class="content__inner">
-                  <p>
-                    Мы ремонтируем все известные марки: 
-                    Samsung, LG, Sony, Panasonic и многие другие.
-                </p>
+                  <ul>
+                    <li>Стайлер</li>
+                    <li>Сушилка для рук</li>
+                    <li>Увлажнитель воздуха</li>
+                    <li>Фен</li>
+                    <li>Пылесос</li>
+                    <li>Выпрямитель</li>
+                  </ul>
                 </div>
-              </template>  
+              </template>
             </BadgerAccordionItem>
           </BadgerAccordion>
         </div>
@@ -194,9 +169,9 @@ export default {
             align-items: center;
             justify-content: center;
           }
-        } 
+        }
       }
- 
+
       .js-badger-accordion-panel {
         .content__inner {
           padding-bottom: 32px;
@@ -211,7 +186,7 @@ export default {
               position: relative;
               margin-bottom: 8px;
               padding-left: 32px;
-            
+
               &::before {
                 content: '';
                 position: absolute;

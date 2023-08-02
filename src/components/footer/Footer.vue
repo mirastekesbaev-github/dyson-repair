@@ -11,13 +11,13 @@
               <a href="#" class="item-link">Что сломалось?</a>
             </li>
             <li class="item">
-              <a href="#" class="item-link">Цены</a>
-            </li>
-            <li class="item">
               <a href="#" class="item-link">Преимущества</a>
             </li>
             <li class="item">
-              <a href="#" class="item-link">Отзывы</a>
+              <a href="#" class="item-link">Процесс ремонта</a>
+            </li>
+            <li class="item">
+              <a href="#" class="item-link">Адрес</a>
             </li>
           </ul>
         </nav>
@@ -39,7 +39,7 @@ export default {
   name: 'FooterComponent'
 }
 </script>
-  
+
 <style lang="scss" scoped>
 .footer {
   &__logo {
@@ -66,13 +66,13 @@ export default {
         color: $gray900;
         text-decoration: none;
         transition: .2s linear;
-        
+
         &:hover {
           background: -webkit-linear-gradient(21deg, #dd03e4, #5611ec);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
         }
-        
+
         &::after {
           content: '';
           position: absolute;
@@ -127,7 +127,7 @@ export default {
       .footer__menu {
         .list {
           display: flex;
-          justify-content: center;  
+          justify-content: center;
           flex-wrap: wrap;
 
           .item {
@@ -139,7 +139,7 @@ export default {
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
               }
-             
+
               &::after {
                 content: none;
               }

@@ -7,28 +7,28 @@
             Узнайте стоимость ремонта и получите <span>скидку 2000 тг.</span> при первом обращении
           </h2>
           <p class="section__subtitle subtitle tac">
-            Ответьте всего на 2 вопроса и получите предварительную стоимость работ, 
+            Ответьте всего на 2 вопроса и получите предварительную стоимость работ,
             чтобы сразу понимать как планировать свой бюджет.
-          </p>    
+          </p>
         </div>
         <div class="content__body">
           <div class="row gy-5">
-            <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-sm-6">
+            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6">
               <ProductItem img="styler" name="Стайлер" />
             </div>
-            <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-sm-6">
+            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6">
               <ProductItem img="dryer" name="Сушилка для рук" />
             </div>
-            <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-sm-6">
+            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6">
               <ProductItem img="humidifier" name="Увлажнитель воздуха" />
             </div>
-            <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-sm-6">
+            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6">
               <ProductItem img="hairdryer" name="Фен" />
             </div>
-            <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-sm-6">
+            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6">
               <ProductItem img="vacuum" name="Пылесос" />
             </div>
-            <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-sm-6">
+            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6">
               <ProductItem img="rectifier" name="Выпрямитель" />
             </div>
           </div>
@@ -55,7 +55,7 @@ import 'vue-slick-carousel/dist/vue-slick-carousel.css'
 
 export default {
   name: 'ProductSection',
-  components: { 
+  components: {
     ProductItem,
     VueSlickCarousel
   }

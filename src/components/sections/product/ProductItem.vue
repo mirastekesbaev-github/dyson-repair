@@ -10,7 +10,6 @@
     </div>
     <p class="product__name">
       {{ name }}
-      <span>Dyson</span>  
     </p>
   </div>
 </template>
@@ -21,13 +20,13 @@ export default {
   props: {
     img: {
       type: String,
-      default: () => ''  
+      default: () => ''
     },
     name: {
       type: String,
       default: () => ''
     }
-  }  
+  }
 }
 </script>
 

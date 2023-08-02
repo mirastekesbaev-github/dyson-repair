@@ -143,7 +143,6 @@ export default {
 
   .content {
     .title {
-      font-family: 'Quicksand', sans-serif;
       z-index: 10;
       margin-bottom: 16px;
       font-size: 46px;

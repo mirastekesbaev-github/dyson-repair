@@ -4,6 +4,7 @@ import router from './router'
 import store from './store'
 import Vuelidate from 'vuelidate'
 import VModal from 'vue-js-modal'
+import VueScrollTo from 'vue-scrollto'
 import AOS from 'aos'
 import './assets/main.scss'
 import './assets/css/bootstrap-grid.min.css'
@@ -12,6 +13,9 @@ import 'aos/dist/aos.css'
 Vue.config.productionTip = false
 Vue.use(Vuelidate)
 Vue.use(VModal)
+Vue.use(VueScrollTo, {
+  easing: 'ease-in-out'
+})
 
 new Vue({
   router,

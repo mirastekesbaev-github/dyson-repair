@@ -2,10 +2,10 @@
   <header class="header pt10 pb10">
     <div class="container">
       <div class="header__body flex aic jcsb pt10 pb10">
-        <div class="header__logo" data-aos="ds-fade-up">
+        <div class="header__logo">
           <img src="../../assets/img/dyson-logo.png" alt="dyson">
         </div>
-        <div class="header__burger" data-aos="ds-fade-up" @click="toggleMenuVisible">
+        <div class="header__burger" @click="toggleMenuVisible">
           <div class="navbar">
             <div class="nav-container">
               <input class="checkbox" :class="{ 'checked': menuVisible }" type="checkbox" />
@@ -19,7 +19,7 @@
         </div>
         <nav class="header__burger-menu flex fdc jcsb" :class="{ 'active': menuVisible }">
           <ul class="list">
-            <li v-for="(item, index) in menu" :key="index" class="item">
+            <li v-for="(item, index) in menu" :key="index" class="item" @click="scrollTo(item, true)">
               <a :href="item.href" class="item-link">{{ item.name }}</a>
             </li>
           </ul>
@@ -30,14 +30,14 @@
             <UIButton btn-name="Перезвоните мне" font-size="14px" @click="showModal" />
           </div>
         </nav>
-        <nav class="header__menu" data-aos="ds-fade-up">
+        <nav class="header__menu">
           <ul class="list flex aic">
-            <li v-for="(item, index) in menu" :key="index" class="item">
+            <li v-for="(item, index) in menu" :key="index" class="item" @click="scrollTo(item)">
               <a :href="item.href" class="item-link">{{ item.name }}</a>
             </li>
           </ul>
         </nav>
-        <div class="header__right flex aic jcsb" data-aos="ds-fade-up">
+        <div class="header__right flex aic jcsb">
           <div class="mr10 pr10">
             <HeaderContact />
           </div>
@@ -68,23 +68,28 @@ export default {
   },
   data() {
     return {
+      width: 0,
       check: false,
       menu: [
       {
         href: '#',
-        name: 'Что случилось?'
+        name: 'Что мы ремонтируем?',
+        section: 'product-section'
       },
       {
         href: '#',
-        name: 'Преимущества'
+        name: 'Преимущества',
+        section: 'facility-section'
       },
       {
         href: '#',
-        name: 'Процесс ремонта'
+        name: 'Процесс ремонта',
+        section: 'query-section'
       },
       {
         href: '#',
-        name: 'Адрес'
+        name: 'Контакты',
+        section: 'contact-section'
       }
       ]
     }
@@ -92,15 +97,36 @@ export default {
   computed: {
     ...mapGetters({
       menuVisible: 'menuVisible'
-    })
+    }),
+    options () {
+      if (this.width <= 992 ) {
+        return { offset: -86 }
+      }
+      return {}
+    }
+  },
+  created () {
+    window.addEventListener('resize', this.resize)
+    this.resize()
   },
   methods: {
+    resize() {
+      this.width = window.innerWidth
+    },
     showModal () {
       this.$modal.show('order-modal')
     },
     toggleMenuVisible () {
       this.$store.commit('setMenuVisible', !this.menuVisible)
       this.$store.commit('setOverlayVisible', this.menuVisible)
+    },
+    scrollTo(value, isSmall = false) {
+      if (isSmall) {
+        this.$store.commit('setMenuVisible', false)
+        this.$store.commit('setOverlayVisible', false)
+      }
+      const section = document.getElementById(value.section)
+      this.$scrollTo(section, 1000, this.options)
     }
   }
 }
@@ -292,6 +318,20 @@ export default {
 // max-width
 @media screen and (max-width: 1200px) {
   .header {
+    &__menu {
+      width: 580px;
+
+      .list {
+        justify-content: center;
+        .item {
+          margin: {
+            left: 6px;
+            right: 6px;
+          }
+        }
+      }
+    }
+    
     &__button {
       display: none;
     }

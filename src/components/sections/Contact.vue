@@ -30,12 +30,12 @@
                     </span>
                     <div class="item__icons flex">
                         <div class="item__icon">
-                            <a href="https://instagram.com" target="_blank">
+                            <a href="https://instagram.com/tv_remont.kz?igshid=NTc4MTIwNjQ2YQ==" target="_blank">
                             <img src="@/assets/icons/instagram-line.svg" alt="">
                             </a>
                         </div>
                         <div class="item__icon">
-                            <a href="https://web.whatsapp.com" target="_blank">
+                            <a href="https://wa.me/+77778037197" target="_blank">
                             <img src="@/assets/icons/whatsapp-line.svg" alt="">
                             </a>
                         </div>

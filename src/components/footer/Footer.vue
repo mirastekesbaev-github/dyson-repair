@@ -7,17 +7,8 @@
         </div>
         <nav class="footer__menu">
           <ul class="list">
-            <li class="item">
-              <a href="#" class="item-link">Что сломалось?</a>
-            </li>
-            <li class="item">
-              <a href="#" class="item-link">Преимущества</a>
-            </li>
-            <li class="item">
-              <a href="#" class="item-link">Процесс ремонта</a>
-            </li>
-            <li class="item">
-              <a href="#" class="item-link">Адрес</a>
+            <li v-for="(item, index) in menu" :key="index" class="item" @click="scrollTo(item)">
+              <a :href="item.href" class="item-link">{{ item.name }}</a>
             </li>
           </ul>
         </nav>
@@ -36,7 +27,67 @@
 
 <script>
 export default {
-  name: 'FooterComponent'
+  name: 'FooterComponent',
+  data() {
+    return {
+      width: 0,
+      check: false,
+      menu: [
+      {
+        href: '#',
+        name: 'Что мы ремонтируем?',
+        section: 'product-section'
+      },
+      {
+        href: '#',
+        name: 'Преимущества',
+        section: 'facility-section'
+      },
+      {
+        href: '#',
+        name: 'Процесс ремонта',
+        section: 'query-section'
+      },
+      {
+        href: '#',
+        name: 'Контакты',
+        section: 'contact-section'
+      }
+      ]
+    }
+  },
+  computed: {
+    options () {
+      if (this.width <= 992 ) {
+        return { offset: -86 }
+      }
+      return {}
+    }
+  },
+  created () {
+    window.addEventListener('resize', this.resize)
+    this.resize()
+  },
+  methods: {
+    resize() {
+      this.width = window.innerWidth
+    },
+    showModal () {
+      this.$modal.show('order-modal')
+    },
+    toggleMenuVisible () {
+      this.$store.commit('setMenuVisible', !this.menuVisible)
+      this.$store.commit('setOverlayVisible', this.menuVisible)
+    },
+    scrollTo(value, isSmall = false) {
+      if (isSmall) {
+        this.$store.commit('setMenuVisible', false)
+        this.$store.commit('setOverlayVisible', false)
+      }
+      const section = document.getElementById(value.section)
+      this.$scrollTo(section, 750, this.options)
+    }
+  }
 }
 </script>
 
@@ -61,7 +112,7 @@ export default {
       }
       .item-link {
         position: relative;
-        font-size: 18px;
+        font-size: 17px;
         font-weight: 400;
         color: $gray900;
         text-decoration: none;

@@ -34,7 +34,12 @@
           </div>
         </div>
         <div class="content__carousel">
-          <VueSlickCarousel :centerMode="true" :arrows="false">
+          <VueSlickCarousel 
+            :centerMode="true" 
+            :arrows="false" 
+            :autoplay="true"
+            :autoplaySpeed="2500"
+          >
             <ProductItem img="rectifier" name="Выпрямитель" />
             <ProductItem img="styler" name="Стайлер" />
             <ProductItem img="dryer" name="Сушилка для рук" />

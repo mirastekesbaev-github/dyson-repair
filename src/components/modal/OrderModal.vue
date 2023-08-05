@@ -45,7 +45,7 @@
               Введите корректный номер телефона!
             </span>
           </div>
-          <UIButton btn-name="Отправить" display="block" type="submit" :load="load" />
+          <UIButton btn-name="Отправить" display="block" type="submit" :load="load"/>
         </form>
       </div>
     </modal>

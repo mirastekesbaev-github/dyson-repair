@@ -73,11 +73,11 @@
             </BadgerAccordionItem>
             <BadgerAccordionItem>
               <template slot="header">
-                <div class="header__inner flex aic jcsb" @click="collapseValues.fifth = !collapseValues.fifth">
+                <div class="header__inner flex aic jcsb" @click="collapseValues.fourth = !collapseValues.fourth">
                   <p>Какую технику вы ремонтируете?</p>
                   <div class="icon">
-                    <img v-if="!collapseValues.fifth" src="@/assets/icons/add-line.svg" alt="plus">
-                    <img v-if="collapseValues.fifth" src="@/assets/icons/subtract-line.svg" alt="minus">
+                    <img v-if="!collapseValues.fourth" src="@/assets/icons/add-line.svg" alt="plus">
+                    <img v-if="collapseValues.fourth" src="@/assets/icons/subtract-line.svg" alt="minus">
                   </div>
                 </div>
               </template>
@@ -115,8 +115,7 @@ export default {
         first: false,
         second: false,
         third: false,
-        fourth: false,
-        fifth: false
+        fourth: false
       }
     }
   },
@@ -162,7 +161,8 @@ export default {
           width: 100%;
           padding: 16px 0;
           color: $gray100;
-          font-size: 22px;
+          font-family: 'Exo 2', sans-serif;
+          font-size: 20px;
 
           .icon {
             display: flex;
@@ -174,7 +174,7 @@ export default {
 
       .js-badger-accordion-panel {
         .content__inner {
-          padding-bottom: 32px;
+          padding-bottom: 24px;
           color: $gray100;
 
           p {

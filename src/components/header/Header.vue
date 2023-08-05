@@ -126,7 +126,7 @@ export default {
         this.$store.commit('setOverlayVisible', false)
       }
       const section = document.getElementById(value.section)
-      this.$scrollTo(section, 1000, this.options)
+      this.$scrollTo(section, 750, this.options)
     }
   }
 }
@@ -277,12 +277,12 @@ export default {
     .list {
       .item {
         margin: {
-          right: 14px;
-          left: 14px;
+          right: 8px;
+          left: 8px;
         }
         .item-link {
           position: relative;
-          font-size: 16px;
+          font-size: 17px;
           font-weight: 400;
           color: $gray900;
           text-decoration: none;

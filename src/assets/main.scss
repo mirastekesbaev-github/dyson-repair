@@ -64,6 +64,10 @@ section {
   .js-badger-accordion-header {
     .badger-accordion-toggle {
       display: block;
+
+      .badger-toggle-indicator {
+        display: none;
+      }
     }
   }
 

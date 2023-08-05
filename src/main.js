@@ -5,10 +5,8 @@ import store from './store'
 import Vuelidate from 'vuelidate'
 import VModal from 'vue-js-modal'
 import VueScrollTo from 'vue-scrollto'
-import AOS from 'aos'
 import './assets/main.scss'
 import './assets/css/bootstrap-grid.min.css'
-import 'aos/dist/aos.css'
 
 Vue.config.productionTip = false
 Vue.use(Vuelidate)
@@ -20,13 +18,5 @@ Vue.use(VueScrollTo, {
 new Vue({
   router,
   store,
-  render: h => h(App),
-  mounted() {
-    AOS.init({
-      duration: 1000,
-      easing: 'ease-in-out',
-      once: true,
-      anchorPlacement: 'top-bottom'
-    })
-  },
+  render: h => h(App)
 }).$mount('#app')

@@ -71,13 +71,20 @@ export default {
     transition: all .2s;
   }
 
+  &.load .button-component-text {
+    visibility: hidden;
+    opacity: 0;
+  }
+
   &.load::after {
     content: "";
     position: absolute;
     width: 24px;
     height: 24px;
-    top: 9px;
-    right: 10px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     margin: auto;
     border: 3px solid transparent;
     border-top-color: #ffffff;

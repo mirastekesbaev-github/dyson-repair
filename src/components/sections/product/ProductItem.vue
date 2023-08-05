@@ -46,8 +46,8 @@ export default {
 
   &__name {
     text-align: center;
-    font-size: 16px;
-    font-weight: 400;
+    font-size: 18px;
+    font-weight: 600;
 
     span {
       font-family: 'Quicksand', 'sans-serif';

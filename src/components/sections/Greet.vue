@@ -2,9 +2,9 @@
   <section id="start-section">
     <div class="container h100">
       <div class="content h100 flex fdc jcc">
-        <h2 class="title" data-aos="ds-fade-up">Ремонт всей техники Dyson с гарантией 3 года</h2>
-        <ul class="list" data-aos="ds-fade-up">
-          <li class="item" data-aos="ds-fade-up">
+        <h2 class="title">Ремонт всей техники <span>dyson</span> с гарантией 3 года</h2>
+        <ul class="list">
+          <li class="item">
             <span class="icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <path
@@ -149,6 +149,11 @@ export default {
       font-weight: 700;
       line-height: 100%;
       color: #fff;
+
+      span {
+        font-family: 'Quicksand', sans-serif;
+        font-weight: 700;
+      }
     }
 
     .list {
@@ -199,8 +204,10 @@ export default {
 
       .list {
         .item {
+          margin-bottom: 2px;
           .text {
-            font-size: 24px;
+            font-weight: 400;
+            font-size: 22px;
             line-height: 100%;
           }
         }

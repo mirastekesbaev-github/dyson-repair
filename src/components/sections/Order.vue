@@ -8,41 +8,45 @@
           </h2>
         </div>
         <div class="content__body flex jcc">
-          <form class="order-form" @submit.prevent="submit">
+          <form action="https://formspree.io/f/xpzgqnag" method="POST" class="order-form" @submit.prevent="submit">
             <div class="order-form__field">
               <label class="label">Ваше имя <span>*</span></label>
               <input 
-                v-model.trim="$v.name.$model" 
+                v-model.trim="$v.form.name.$model" 
                 class="input"
                 id="name" 
                 type="text"
               >
-              <span v-if="!$v.name.required && $v.name.$dirty" class="error-text">
+              <span v-if="!$v.form.name.required && $v.form.name.$dirty" class="error-text">
                 Заполните обязательное поле!
               </span>
             </div>
             <div class="order-form__field">
               <label class="label">Ваш телефон <span>*</span></label>
               <input 
-                v-model.trim="$v.phone.$model" 
+                v-model.trim="$v.form.phone.$model" 
                 class="input"
                 id="phone" 
                 type="text"
                 v-mask="'+7 (###) ###-##-##'"
               >
-              <span v-if="!$v.phone.required && $v.phone.$dirty" class="error-text">
+              <span v-if="!$v.form.phone.required && $v.form.phone.$dirty" class="error-text">
                 Заполните обязательное поле!
               </span>
-              <span v-if="!$v.phone.minLength && $v.phone.$dirty" class="error-text">
+              <span v-if="!$v.form.phone.minLength && $v.form.phone.$dirty" class="error-text">
                 Введите корректный номер телефона!
               </span>
             </div>
             <div class="order-form__field">
-              <label class="label">Что сломалось?</label>
-              <input class="input" type="text">
+              <label class="label">Техника</label>
+              <input v-model="form.technics" class="input" type="text">
             </div>
             <div class="order-form__field">
-              <UIButton btn-name="Оформить заявку" display="block" />
+              <label class="label">Что сломалось?</label>
+              <input v-model="form.problem" class="input" type="text">
+            </div>
+            <div class="order-form__field">
+              <UIButton btn-name="Оформить заявку" display="block" type="submit" :load="load" />
             </div>
           </form>
         </div>
@@ -62,24 +66,59 @@ export default {
   components: { UIButton },
   data() {
     return {
-      name: '',
-      phone: ''
+      load: false,
+      form: {
+        name: '',
+        phone: '',
+        technics: '',
+        problem: ''
+      }
     }
   },
   validations: {
-    name: { required },
-    phone: {
-      required,
-      minLength: minLength(18)
+    form: {
+      name: { required },
+      phone: {
+        required,
+        minLength: minLength(18)
+      }
     }
   },
   methods: {
-    submit() {
+    submit(e) {
       this.$v.$touch()
-      if (this.$v.$invalid) {
-        console.log('submit error')
-      } else {
-        console.log('submit success')
+      if (!this.$v.$invalid) {
+        this.load = true
+        const data = new FormData()
+        data.append('Заявка с сайта (Скидка 10%)', 'Да')
+        data.append('Имя', this.form.name)
+        data.append('Телефон', this.form.phone)
+        data.append('Техника', this.form.technics || '-')
+        data.append('Что случилось?', this.form.problem || '-')
+        fetch(e.target.action, {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json',
+          },
+          body: data
+        })
+          .then((response) => {
+            if (response.ok) {
+              this.$modal.show('order-success-modal') 
+            } else {
+              this.$modal.show('order-error-modal')
+            }
+          })
+          .finally(() => {
+            this.load = false
+            this.form = {
+              name: '',
+              phone: '',
+              technics: '',
+              problem: '' 
+            }
+            this.$v.$reset()
+          })
       }
     }
   }
@@ -106,7 +145,7 @@ export default {
     &__body {
       .order-form {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(5, 1fr);
         grid-column-gap: 24px;
 
         &__field {

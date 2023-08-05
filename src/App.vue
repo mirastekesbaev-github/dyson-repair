@@ -1,11 +1,7 @@
 <template>
   <div id="app">
     <transition name="fade">
-      <div
-          v-if="overlayVisible"
-          class="overlay"
-          @click="closeMenu"
-      />
+      <div v-if="overlayVisible" class="overlay" @click="closeMenu" />
     </transition>
     <Header />
     <main class="main">
@@ -18,6 +14,8 @@
     </main>
     <Footer />
     <OrderModal />
+    <OrderSuccessModal />
+    <OrderErrorModal />
   </div>
 </template>
 
@@ -32,6 +30,8 @@ import Query from '@/components/sections/Query.vue'
 import Contact from '@/components/sections/Contact.vue'
 import Footer from '@/components/footer/Footer.vue'
 import OrderModal from '@/components/modal/OrderModal.vue'
+import OrderSuccessModal from '@/components/modal/OrderSuccessModal.vue'
+import OrderErrorModal from '@/components/modal/OrderErrorModal.vue'
 
 export default {
   name: 'App',
@@ -44,7 +44,9 @@ export default {
     Query,
     Contact,
     Footer,
-    OrderModal
+    OrderModal,
+    OrderSuccessModal,
+    OrderErrorModal
   },
   computed: {
     ...mapGetters({

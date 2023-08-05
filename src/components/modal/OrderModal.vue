@@ -16,34 +16,36 @@
           Заявка на обратный звонок
         </h2>
       <div class="w100">
-        <form class="modal-form" @submit.prevent="submit">
-          <div class="form-field" :class="{ 'error': $v.name.$error }">
+        <form action="https://formspree.io/f/xjvqgzbw" method="POST" class="modal-form" @submit.prevent="submit">
+          <div class="form-field" :class="{ 'error': $v.form.name.$error }">
             <label for="name">Ваше имя</label>
             <input
-              v-model.trim="$v.name.$model"
+              v-model.trim="$v.form.name.$model"
               id="name"
               type="text"
+              name="name"
             >
-            <span v-if="!$v.name.required && $v.name.$dirty" class="error-text">
+            <span v-if="!$v.form.name.required && $v.form.name.$dirty" class="error-text">
               Заполните обязательное поле!
             </span>
           </div>
-          <div class="form-field" :class="{ 'error': $v.phone.$error }">
+          <div class="form-field" :class="{ 'error': $v.form.phone.$error }">
             <label for="phone">Ваш телефон</label>
             <input
-              v-model.trim="$v.phone.$model"
+              v-model.trim="$v.form.phone.$model"
               id="phone"
               type="text"
+              name="phone"
               v-mask="'+7 (###) ###-##-##'"
             >
-            <span v-if="!$v.phone.required && $v.phone.$dirty" class="error-text">
+            <span v-if="!$v.form.phone.required && $v.form.phone.$dirty" class="error-text">
               Заполните обязательное поле!
             </span>
-            <span v-if="!$v.phone.minLength && $v.phone.$dirty" class="error-text">
+            <span v-if="!$v.form.phone.minLength && $v.form.phone.$dirty" class="error-text">
               Введите корректный номер телефона!
             </span>
           </div>
-          <UIButton btn-name="Отправить" display="block" />
+          <UIButton btn-name="Отправить" display="block" type="submit" :load="load" />
         </form>
       </div>
     </modal>
@@ -61,16 +63,26 @@ export default {
   components: { UIButton },
   data() {
     return {
-      name: '',
-      phone: ''
+      load: false,
+      form: {
+        name: '',
+        phone: ''
+      }
     }
   },
   validations: {
-    name: { required },
-    phone: {
-      required,
-      minLength: minLength(18)
+    form: {
+      name: { required },
+      phone: {
+        required,
+        minLength: minLength(18)
+      }
     }
+  },
+  destroyed() {
+    this.name = ''
+    this.phone = ''
+    this.$v.$reset()
   },
   methods: {
     beforeClose() {
@@ -81,12 +93,32 @@ export default {
     closeModal() {
       this.$modal.hide('order-modal')
     },
-    submit() {
+    submit(e) {
       this.$v.$touch()
-      if (this.$v.$invalid) {
-        console.log('submit error')
-      } else {
-        console.log('submit success')
+      if (!this.$v.$invalid) {
+        this.load = true
+        const data = new FormData()
+        data.append('Имя', this.form.name)
+        data.append('Телефон', this.form.phone)
+        fetch(e.target.action, {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json',
+          },
+          body: data
+        })
+          .then((response) => {
+            if (response.ok) {
+              this.$modal.hide('order-modal')
+              this.$modal.show('order-success-modal') 
+            } else {
+              this.$modal.hide('order-modal')
+              this.$modal.show('order-error-modal')
+            }
+          })
+          .finally(() => {
+            this.load = false
+          })
       }
     }
   }

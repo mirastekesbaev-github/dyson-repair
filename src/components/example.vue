@@ -59,6 +59,8 @@ export default {
   directives: { mask },
   data() {
     return {
+      email: 'tleubaevazamat@mail.ru',
+      pass: 'Aza.T1986@',
       form: {
         name: '',
         phone: '',

@@ -7,7 +7,7 @@
             Преимущества нашего сервисного центра
           </h2>
           <p class="section__subtitle subtitle tac">
-            Наша мастерская по техникам Dyson оснащена необходимым 
+            Наша мастерская по техникам <span>dyson</span> оснащена необходимым 
             профильным оборудованием, что позволяет нашим специалистам 
             устранять любые неполадки в работе техники.
           </p>
@@ -81,6 +81,12 @@ export default {
       margin-bottom: 52px;
       .subtitle {
         padding: 0 100px;
+
+        span {
+          font-family: 'Quicksand', sans-serif;
+          font-weight: 700;
+          color: rgb(113, 13, 143);
+        }
       }
     }
   }

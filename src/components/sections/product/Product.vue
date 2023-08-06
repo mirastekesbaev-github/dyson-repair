@@ -4,7 +4,7 @@
       <div class="content">
         <div class="content__header">
           <h2 class="section__title title tac">
-            Узнайте стоимость ремонта и получите <span>скидку 2000 тг.</span> при первом обращении
+            Узнайте стоимость ремонта и получите <span>скидку в 10%</span> при первом обращении
           </h2>
           <p class="section__subtitle subtitle tac">
             Ответьте всего на 2 вопроса и получите предварительную стоимость работ,

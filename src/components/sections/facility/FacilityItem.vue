@@ -74,11 +74,11 @@ export default {
     }
     
     &.red {
-      fill: $error600;
+      fill: rgb(113, 13, 143);
     }
 
     &.yellow {
-      fill: $warning500;
+      fill: rgb(113, 13, 143);
     }
   }
 

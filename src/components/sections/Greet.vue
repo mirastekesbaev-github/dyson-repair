@@ -4,96 +4,13 @@
       <div class="content h100 flex fdc jcc">
         <h2 class="title">Ремонт всей техники <span>dyson</span> с гарантией 3 года</h2>
         <ul class="list">
-          <li class="item">
+          <li v-for="(item, index) in list" :key="index" class="item">
             <span class="icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path
-                    d="M4 3H20C20.5523 3 21 3.44772 21 4V20C21 20.5523 20.5523 21 20 21H4C3.44772
-                    21 3 20.5523 3 20V4C3 3.44772 3.44772 3 4 3ZM5 5V19H19V5H5ZM11.0026 16L6.75999
-                    11.7574L8.17421 10.3431L11.0026 13.1716L16.6595 7.51472L18.0737 8.92893L11.0026 16Z"
-                    fill="#fff"
-                />
+                <path d="M11.602 13.7599L13.014 15.1719L21.4795 6.7063L22.8938 8.12051L13.014 18.0003L6.65 11.6363L8.06421 10.2221L10.189 12.3469L11.6025 13.7594L11.602 13.7599ZM11.6037 10.9322L16.5563 5.97949L17.9666 7.38977L13.014 12.3424L11.6037 10.9322ZM8.77698 16.5873L7.36396 18.0003L1 11.6363L2.41421 10.2221L3.82723 11.6352L3.82604 11.6363L8.77698 16.5873Z" />
               </svg>
             </span>
-            <p class="text">Бесплатный выезд мастера на дом</p>
-          </li>
-          <li class="item">
-            <span class="icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path
-                    d="M4 3H20C20.5523 3 21 3.44772 21 4V20C21 20.5523 20.5523 21 20 21H4C3.44772
-                    21 3 20.5523 3 20V4C3 3.44772 3.44772 3 4 3ZM5 5V19H19V5H5ZM11.0026 16L6.75999
-                    11.7574L8.17421 10.3431L11.0026 13.1716L16.6595 7.51472L18.0737 8.92893L11.0026 16Z"
-                    fill="#fff"
-                />
-              </svg>
-            </span>
-            <p class="text">Бесплатная диагностика за 15 мин</p>
-          </li>
-          <li class="item">
-            <span class="icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path
-                    d="M4 3H20C20.5523 3 21 3.44772 21 4V20C21 20.5523 20.5523 21 20 21H4C3.44772
-                    21 3 20.5523 3 20V4C3 3.44772 3.44772 3 4 3ZM5 5V19H19V5H5ZM11.0026 16L6.75999
-                    11.7574L8.17421 10.3431L11.0026 13.1716L16.6595 7.51472L18.0737 8.92893L11.0026 16Z"
-                    fill="#fff"
-                />
-              </svg>
-            </span>
-            <p class="text">Бесплатная доставка в сервис и обратно</p>
-          </li>
-          <li class="item">
-            <span class="icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path
-                    d="M4 3H20C20.5523 3 21 3.44772 21 4V20C21 20.5523 20.5523 21 20 21H4C3.44772
-                    21 3 20.5523 3 20V4C3 3.44772 3.44772 3 4 3ZM5 5V19H19V5H5ZM11.0026 16L6.75999
-                    11.7574L8.17421 10.3431L11.0026 13.1716L16.6595 7.51472L18.0737 8.92893L11.0026 16Z"
-                    fill="#fff"
-                />
-              </svg>
-            </span>
-            <p class="text">Оригинальные запчасти на всю технику</p>
-          </li>
-          <li class="item">
-            <span class="icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path
-                    d="M4 3H20C20.5523 3 21 3.44772 21 4V20C21 20.5523 20.5523 21 20 21H4C3.44772
-                    21 3 20.5523 3 20V4C3 3.44772 3.44772 3 4 3ZM5 5V19H19V5H5ZM11.0026 16L6.75999
-                    11.7574L8.17421 10.3431L11.0026 13.1716L16.6595 7.51472L18.0737 8.92893L11.0026 16Z"
-                    fill="#fff"
-                />
-              </svg>
-            </span>
-            <p class="text">Авторизованный сервисный центр</p>
-          </li>
-          <li class="item">
-            <span class="icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path
-                    d="M4 3H20C20.5523 3 21 3.44772 21 4V20C21 20.5523 20.5523 21 20 21H4C3.44772
-                    21 3 20.5523 3 20V4C3 3.44772 3.44772 3 4 3ZM5 5V19H19V5H5ZM11.0026 16L6.75999
-                    11.7574L8.17421 10.3431L11.0026 13.1716L16.6595 7.51472L18.0737 8.92893L11.0026 16Z"
-                    fill="#fff"
-                />
-              </svg>
-            </span>
-            <p class="text">Профессиональный ремонт</p>
-          </li>
-          <li class="item">
-            <span class="icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path
-                    d="M4 3H20C20.5523 3 21 3.44772 21 4V20C21 20.5523 20.5523 21 20 21H4C3.44772
-                    21 3 20.5523 3 20V4C3 3.44772 3.44772 3 4 3ZM5 5V19H19V5H5ZM11.0026 16L6.75999
-                    11.7574L8.17421 10.3431L11.0026 13.1716L16.6595 7.51472L18.0737 8.92893L11.0026 16Z"
-                    fill="#fff"
-                />
-              </svg>
-            </span>
-            <p class="text">Широкий спектр услуг</p>
+            <p class="text">{{ item.text }}</p>
           </li>
         </ul>
         <div class="content__button">
@@ -110,6 +27,19 @@ import UIButton from '@/components/ui/Button.vue'
 export default {
   name: 'GreetSection',
   components: { UIButton },
+  data() {
+    return {
+      list: [
+        { text: 'Бесплатный выезд мастера на дом' },
+        { text: 'Бесплатная диагностика за 15 мин' },
+        { text: 'Бесплатная доставка в сервис и обратно' },
+        { text: 'Оригинальные запчасти на всю технику' },
+        { text: 'Авторизованный сервисный центр' },
+        { text: 'Профессиональный ремонт' },
+        { text: 'Широкий спектр услуг' }
+      ]
+    }
+  },
   methods: {
     showModal() {
       this.$modal.show('order-modal')
@@ -153,6 +83,7 @@ export default {
       span {
         font-family: 'Quicksand', sans-serif;
         font-weight: 700;
+        color: rgb(216, 155, 240);
       }
     }
 
@@ -165,11 +96,12 @@ export default {
         margin-bottom: 6px;
         .icon {
           z-index: 10;
-          margin-right: 8px;
-          svg {
-            width: 32px;
-            height: 32px;
-          }
+          margin-right: 12px;
+          width: 32px;
+          height: 32px;
+          min-width: 32px;
+          min-height: 32px;
+          fill: #e7aaff;
         }
 
         .text {
@@ -178,17 +110,6 @@ export default {
           line-height: 126%;
           color: #fff;
         }
-      }
-
-      .item::after {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 0;
-        transform: translate(23%, -53%);
-        width: 22px;
-        height: 22px;
-        background: linear-gradient(21deg, #dd03e4, #5611ec);
       }
     }
   }
@@ -204,7 +125,7 @@ export default {
 
       .list {
         .item {
-          margin-bottom: 2px;
+          margin-bottom: 12px;
           .text {
             font-weight: 400;
             font-size: 22px;

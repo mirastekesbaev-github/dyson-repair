@@ -16,7 +16,7 @@
           Заявка на обратный звонок
         </h2>
       <div class="w100">
-        <form action="https://formspree.io/f/xjvqgzbw" method="POST" class="modal-form" @submit.prevent="submit">
+        <form action="https://formspree.io/f/xzblerpk" method="POST" class="modal-form" @submit.prevent="submit">
           <div class="form-field" :class="{ 'error': $v.form.name.$error }">
             <label for="name">Ваше имя</label>
             <input
@@ -110,7 +110,7 @@ export default {
           .then((response) => {
             if (response.ok) {
               this.$modal.hide('order-modal')
-              this.$modal.show('order-success-modal') 
+              this.$modal.show('order-success-modal')
             } else {
               this.$modal.hide('order-modal')
               this.$modal.show('order-error-modal')

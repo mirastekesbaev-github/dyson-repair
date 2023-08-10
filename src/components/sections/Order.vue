@@ -8,13 +8,13 @@
           </h2>
         </div>
         <div class="content__body flex jcc">
-          <form action="https://formspree.io/f/xpzgqnag" method="POST" class="order-form" @submit.prevent="submit">
+          <form action="https://formspree.io/f/xeqbagjv" method="POST" class="order-form" @submit.prevent="submit">
             <div class="order-form__field">
               <label class="label">Ваше имя <span>*</span></label>
-              <input 
-                v-model.trim="$v.form.name.$model" 
+              <input
+                v-model.trim="$v.form.name.$model"
                 class="input"
-                id="name" 
+                id="name"
                 type="text"
               >
               <span v-if="!$v.form.name.required && $v.form.name.$dirty" class="error-text">
@@ -23,10 +23,10 @@
             </div>
             <div class="order-form__field">
               <label class="label">Ваш телефон <span>*</span></label>
-              <input 
-                v-model.trim="$v.form.phone.$model" 
+              <input
+                v-model.trim="$v.form.phone.$model"
                 class="input"
-                id="phone" 
+                id="phone"
                 type="text"
                 v-mask="'+7 (###) ###-##-##'"
               >
@@ -104,7 +104,7 @@ export default {
         })
           .then((response) => {
             if (response.ok) {
-              this.$modal.show('order-success-modal') 
+              this.$modal.show('order-success-modal')
             } else {
               this.$modal.show('order-error-modal')
             }
@@ -115,7 +115,7 @@ export default {
               name: '',
               phone: '',
               technics: '',
-              problem: '' 
+              problem: ''
             }
             this.$v.$reset()
           })
@@ -172,7 +172,7 @@ export default {
             outline: none;
             border-radius: 6px;
             transition: .3s ease;
-          
+
             &:focus {
               background: rgba(202, 202, 202, 0.3);
             }

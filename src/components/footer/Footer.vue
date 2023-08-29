@@ -1,9 +1,9 @@
 <template>
   <footer class="footer pt10 pb10">
     <div class="container">
-      <div class="footer__body flex aic jcsb pt10 pb10">
+      <div class="footer__body flex aic jcsb">
         <div class="footer__logo">
-          <img src="../../assets/img/dyson-logo.png" alt="dyson">
+          <img src="../../assets/img/dyson-logo-2.jpg" alt="dyson">
         </div>
         <nav class="footer__menu">
           <ul class="list">
@@ -96,8 +96,8 @@ export default {
   &__logo {
     img {
       display: block;
-      width: 100px;
-      height: 38px;
+      width: 142px;
+      height: 52px;
     }
   }
 
